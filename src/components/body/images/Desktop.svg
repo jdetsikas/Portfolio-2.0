@@ -1,0 +1,21 @@
+<svg width="147" height="110" viewBox="0 0 147 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="147" height="110" fill="white"/>
+<path d="M79.1133 85L82.6885 98H63.2979L66.7285 85H79.1133Z" fill="url(#paint0_linear_1_28)" stroke="black" stroke-width="2"/>
+<rect x="23" y="12" width="101" height="74" rx="7" fill="#F5F7FA" stroke="black" stroke-width="2"/>
+<rect x="29" y="21" width="88" height="11" rx="2" fill="#5EA0EC" stroke="#468FE9" stroke-width="2"/>
+<rect x="90" y="42" width="21" height="22" rx="1" fill="#C9DEF7" stroke="#C2D9F5" stroke-width="2"/>
+<mask id="path-5-inside-1_1_28" fill="white">
+<rect x="31" y="73" width="84" height="3" rx="1"/>
+</mask>
+<rect x="31" y="73" width="84" height="3" rx="1" fill="#C9DEF7" stroke="#C2D9F5" stroke-width="3" mask="url(#path-5-inside-1_1_28)"/>
+<rect x="61" y="42" width="21" height="22" rx="1" fill="#C9DEF7" stroke="#C2D9F5" stroke-width="2"/>
+<rect x="32" y="50" width="21" height="14" rx="1" fill="#C9DEF7" stroke="#C2D9F5" stroke-width="2"/>
+<rect x="32" y="38" width="21" height="5" rx="1" fill="#C9DEF7" stroke="#C2D9F5" stroke-width="2"/>
+<rect x="51" y="97" width="44" height="2" rx="1" fill="black"/>
+<defs>
+<linearGradient id="paint0_linear_1_28" x1="73" y1="84" x2="73" y2="98.5313" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1E4A85"/>
+<stop offset="1" stop-color="#6EB9FD"/>
+</linearGradient>
+</defs>
+</svg>

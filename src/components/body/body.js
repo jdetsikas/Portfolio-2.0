@@ -1,12 +1,20 @@
 import './body.scss';
 
+import {images} from './images/index.ts'
+import {Projects} from './projects.ts'
+
+function openInNewTab(url) {
+  window.open(url, '_blank', 'noopener,noreferrer');
+};
+
 function Body() {
-  return (
-    <div id="body" className="col">
+  return (<>
+    <div id="top"></div>
+    <div id="body-content" className="col">
 
       <div id="title" className="row">
 
-        <div className="col">
+        <div className="text col">
           <h1>Front-End Developer</h1>
           <p>
             I build beautiful and user-friendly websites with a focus on performance and 
@@ -14,15 +22,13 @@ function Body() {
           </p>
         </div>
 
-        <div className="col">
-          <img/>
-        </div>
+        <img src={images.Figure_1} alt=""/>
 
       </div>
 
       <div id="about" className="row">
         
-        <div className="col">
+        <div className="text col">
           <h2>About Me</h2>
           <p>
             I am a front-end developer with 5 years of experience in creating responsive, 
@@ -32,9 +38,7 @@ function Body() {
           </p>
         </div>
 
-        <div className="col">
-          <img/>
-        </div>
+        <img src={images.Calendar} alt=""/>
 
       </div>
 
@@ -42,58 +46,56 @@ function Body() {
           
         <h2>Projects</h2>
 
-        <section id="portfolio-list" className="row">
-        
-          <div className="item row">
+        <section id="portfolio-list" className="col">
 
-            <img/>
-            
-            <div className="col">
-              <p>Portfolio Website</p>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
+          {Projects.map((proj, index) => {
+            return(
+              <div className="item row" key={index}>
 
-          </div>
-          
-          <div className="item row">
+                <img src={proj.img} alt="" onClick={() => openInNewTab(proj.url)}/>
+                
+                <div className="text col">
+                  <p className="proj-title">{proj.title}</p>
+                  <p className="proj-desc">{proj.description}</p>
+                </div>
 
-            <img/>
-            
-            <div className="col">
-              <p>Portfolio Website</p>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-
-          </div>
-          
-          <div className="item row">
-
-            <img/>
-            
-            <div className="col">
-              <p>Portfolio Website</p>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-
-          </div>
+              </div>
+            )
+          })}
         
         </section>
 
       </div>
 
-      <div id="contact" className="col"></div>
+      <div id="contact" className="col">
         
-        <h2>Contact Me</h2>
-        <p>If you would like to work together, please feel free to reach out!</p>
+        <h2>Contact</h2>
+
         <form className="col">
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Message"></textarea>
-          <button type="submit">Send</button>
+          <input className="form-sect" type="text" placeholder="Name" />
+          <input className="form-sect" type="email" placeholder="Email" />
+          <textarea className="form-sect" placeholder="Message" style={{'min-height': '150px'}}></textarea>
+          <button className="form-button" type="submit">Send</button>
         </form>
 
+        <div id="socials" className="col">
+          
+          <div className="item row">
+            <img alt=""/>
+            <a href="https://github.com/jdetsikas">LinkedIn</a>
+          </div>
+
+          <div className="item row">
+            <img alt=""/>
+            <a href="https://github.com/jdetsikas">Github</a>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
-  );
+  </>);
 };
 
 export default Body;
