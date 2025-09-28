@@ -51,13 +51,22 @@ function Body() {
 
           {Projects.map((proj, index) => {
             return(
-              <div className="item row" key={index}>
+              <div className="item col" key={index}>
 
-                <img src={proj.img} alt="" onClick={() => openInNewTab(proj.url)}/>
+                <a className="proj-title" href={proj.url} target="_blank" rel="noreferrer">{proj.title}</a>
                 
-                <div className="text col">
-                  <p className="proj-title">{proj.title}</p>
-                  <p className="proj-desc">{proj.description}</p>
+                <div className="proj-content row">
+
+                  <img src={proj.img} alt="" onClick={() => openInNewTab(proj.url)}/>
+
+                  <div className="proj-text col">
+                    <p className="proj-desc">{proj.description}</p>
+                    <div className="proj-stack row">
+                      <span className="bold">Stack:</span>
+                      {proj.stack.map((tech, idx) => {return (<span className="tech" key={idx}>{tech}{idx < proj.stack.length - 1 ? <span>,</span> : null}</span>)})}
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
