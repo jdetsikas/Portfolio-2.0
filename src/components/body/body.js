@@ -10,6 +10,7 @@ function openInNewTab(url) {
 function Body() {
   return (<>
     <div id="top"></div>
+    <div id="background"></div>
     <div id="body-content" className="col">
 
       <div id="title" className="row">

@@ -1,3 +1,15 @@
+#background {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background: black;
+    z-index: -1;
+    background: linear-gradient(180deg, #ffffff 50%, #ced7e6 100%);
+}
+
 #body-content {
     margin-top: 40px;
     gap: 60px;
