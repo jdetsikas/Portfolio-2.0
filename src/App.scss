@@ -33,6 +33,18 @@
   padding: 0px var(--hor-padding);
 };
 
+@media (max-width: 840px) {
+  #content-area {
+    --hor-padding: 40px;
+  };
+};
+
+@media (max-width: 600px) {
+  #content-area {
+    --hor-padding: 20px;
+  };
+};
+
 
 ////////////////
 // CSS Reset //
