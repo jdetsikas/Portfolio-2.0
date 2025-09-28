@@ -34,7 +34,7 @@ function Body() {
           <p>
             I am a front-end developer with 5 years of experience in creating responsive, 
             accessible, and high-performance web applications. I have a strong foundation 
-            in HTML, CSS, and JavaSctipt, and I am always eager to learn new technologies 
+            in HTML, CSS, and JavaScript, and I am always eager to learn new technologies 
             and improve my skills.
           </p>
         </div>
