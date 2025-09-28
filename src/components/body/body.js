@@ -71,23 +71,29 @@ function Body() {
         
         <h2>Contact</h2>
 
-        <form className="col">
+        {/* <form className="col">
           <input className="form-sect" type="text" placeholder="Name" />
           <input className="form-sect" type="email" placeholder="Email" />
           <textarea className="form-sect" placeholder="Message" style={{'min-height': '150px'}}></textarea>
           <button className="form-button" type="submit">Send</button>
-        </form>
+        </form> */}
+
 
         <div id="socials" className="col">
           
           <div className="item row">
-            <img alt=""/>
-            <a href="https://github.com/jdetsikas">LinkedIn</a>
+            <img src={images.Gmail} alt=""/>
+            <a href="mailto:john.o.detsikas@gmail.com">john.o.detsikas@gmail.com</a>
+          </div>
+          
+          <div className="item row">
+            <img src={images.LI} alt=""/>
+            <a href="https://www.linkedin.com/in/john-detsikas/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
           <div className="item row">
-            <img alt=""/>
-            <a href="https://github.com/jdetsikas">Github</a>
+            <img src={images.Git} alt=""/>
+            <a href="https://github.com/jdetsikas" target="_blank" rel="noreferrer">Github</a>
           </div>
 
         </div>
