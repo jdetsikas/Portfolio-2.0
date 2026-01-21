@@ -7,6 +7,7 @@ import Git from './github-mark.svg';
 import Gmail from './gmail.png';
 import LI from './LI-In-Bug.png'
 import PomoDoro from './Pomodoro_Preview.png';
+import SDO from './SDO_Preview.png';
 
 export const images = {
     "Calendar": Calendar,
@@ -18,4 +19,5 @@ export const images = {
     "Gmail": Gmail,
     "LI": LI,
     "PomoDoro": PomoDoro,
+    "SDO": SDO,
 };
