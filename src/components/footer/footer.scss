@@ -1,0 +1,21 @@
+footer {
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid var(--color-rule);
+  margin-top: auto;
+
+  .footer-name {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-ink);
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--color-ink-faint);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+}
