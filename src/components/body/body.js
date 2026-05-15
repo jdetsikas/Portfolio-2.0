@@ -58,11 +58,11 @@ function Body() {
           <div className="hero-text col">
             <p className="hero-eyebrow">Front-End Developer</p>
             <h1>
-              Crafting the web,<br />
-              <em>beautifully.</em>
+              Precision-built<br />
+              <em>for the web.</em>
             </h1>
             <p className="hero-desc">
-              I build responsive, accessible, and high-performance web applications — with an eye for detail and a deep respect for the user experience.
+              I specialise in building fast, accessible, and maintainable web applications — translating design intent into polished, production-ready interfaces.
             </p>
             <div className="hero-meta">
               <div className="meta-item">
@@ -89,12 +89,12 @@ function Body() {
         <div id="about">
           <div className="col">
             <p className="section-label">About me</p>
-            <h2 {...addReveal()}>Focused on<br />the details.</h2>
+            <h2 {...addReveal()}>Thoughtful code.<br />Measurable results.</h2>
             <p className="about-body" {...addReveal('d1')}>
-              I'm a front-end developer with 5 years of experience creating responsive, accessible, and high-performance web applications. My foundation in HTML, CSS, and JavaScript runs deep.
+              I'm a front-end developer with over five years of experience delivering responsive, accessible web applications across a range of industries. I hold a strong command of HTML, CSS, and JavaScript, and bring that same rigour to TypeScript, React, and Angular.
             </p>
-            <p className="about-body" {...addReveal('d2')}>
-              I'm always eager to learn new technologies and push the boundaries of what the browser can do — whether that's building a complex Angular app, visualising data with D3, or fine-tuning a WordPress theme.
+            <p className="about-body" {...addReveal('d2')}><br/>
+              I take pride in writing clean, maintainable code and in staying current with evolving standards — whether that means integrating a GraphQL API, optimising a build pipeline, or crafting an accessible data visualisation with D3.
             </p>
           </div>
           <div className="skills-grid" {...addReveal('d1')}>
@@ -154,9 +154,9 @@ function Body() {
         <div id="contact">
           <div className="col">
             <p className="section-label">Let's talk</p>
-            <h2 {...addReveal()}>Got a project<br /><em>in mind?</em></h2>
+            <h2 {...addReveal()}>Let's build<br /><em>something great.</em></h2>
             <p className="contact-sub" {...addReveal('d1')}>
-              I'm open to new opportunities — freelance projects, full-time roles, or just a good conversation about the web.
+              I'm currently open to new opportunities — whether that's a full-time role, a contract engagement, or a collaborative project. I'd welcome the chance to connect.
             </p>
           </div>
 
