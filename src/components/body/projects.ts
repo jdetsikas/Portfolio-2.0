@@ -16,6 +16,13 @@ export const Projects = [
         url: "https://discover.familytreedna.com/",
     },
     {
+        title: "Needlr",
+        description: `Needlr is a location-based search tool for finding tattoo and piercing shops near you. Users enter a zip code and search radius to get a ranked list of local shops, with details like ratings, hours, contact info, and photos pulled live from Google Places.`,
+        img: images.NeedlrPreview,
+        stack: ['React', 'Vite', 'CSS', 'JavaScript', 'Google Maps JS API', 'Google Places API', 'SVG'],
+        url: "https://needlr.netlify.app/",
+    },
+    {
         title: "Pomodoro Timer",
         description: `A focused productivity tool implementing the Pomodoro Technique — 25-minute work intervals separated by short breaks, with longer rest periods after every four cycles. Built in React with a clean, distraction-free interface designed to keep users in flow.`,
         img: images.PomoDoro,
