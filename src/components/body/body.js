@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
-import './body.scss';
 
-import { images } from './images/index.ts';
+import './body.scss';
+import { motion } from 'framer-motion';
 import { Projects } from './projects.ts';
+import { images } from './images/index.ts';
 
 function openInNewTab(url) {
   window.open(url, '_blank', 'noopener,noreferrer');
@@ -11,182 +11,162 @@ function openInNewTab(url) {
 const skillGroups = [
   {
     label: 'Languages & Frameworks',
-    chips: ['HTML5', 'CSS / SCSS', 'JavaScript', 'TypeScript', 'React', 'Angular'],
+    chips: ['React', 'TypeScript', 'Angular', 'JavaScript', 'Python', 'SCSS', 'HTML']
   },
   {
     label: 'Backend & Cloud',
-    chips: ['NodeJS', 'GraphQL', 'AWS', 'Stripe'],
+    chips: ['NodeJS', 'GraphQL', 'AWS', 'Stripe', 'WordPress']
   },
   {
-    label: 'Tooling & Craft',
-    chips: ['WordPress', 'D3', 'Responsive Design', 'Web Accessibility', 'Performance'],
+    label: 'Design & UX',
+    chips: ['Motion UI', 'Accessibility', 'Responsive Design', 'Figma', 'Canva', 'Performance']
   },
 ];
 
 function Body() {
-  const revealRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    revealRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  const addReveal = (delay = '') => ({
-    ref: (el) => { if (el) revealRefs.current.push(el); },
-    className: `reveal${delay ? ' ' + delay : ''}`,
-  });
-
   return (
     <>
       <div id="top" />
-      <div id="background" />
+
       <div id="body-content" className="col">
 
-        {/* ── Hero ── */}
-        <div id="title" className="row">
-          <div className="hero-text col">
-            <p className="hero-eyebrow">Front-End Developer</p>
-            <h1>
-              Precision-built<br />
-              <em>for the web.</em>
-            </h1>
-            <p className="hero-desc">
-              I specialise in building fast, accessible, and maintainable web applications — translating design intent into polished, production-ready interfaces.
-            </p>
-            <div className="hero-meta">
-              <div className="meta-item">
-                <span className="meta-num">5+</span>
-                <span className="meta-label">Years exp.</span>
-              </div>
-              <div className="meta-item">
-                <span className="meta-num">3</span>
-                <span className="meta-label">Projects</span>
-              </div>
-            </div>
-            <a
-              className="hero-cta"
-              href="#portfolio"
-              onClick={(e) => { e.preventDefault(); document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' }); }}
-            >
-              View my work <span className="arrow">→</span>
-            </a>
-          </div>
-          <img className="hero-illustration" src={images.Figure_1} alt="" />
-        </div>
+        <section id="title">
 
-        {/* ── About ── */}
-        <div id="about">
-          <div className="col">
-            <p className="section-label">About me</p>
-            <h2 {...addReveal()}>Thoughtful code.<br />Measurable results.</h2>
-            <p className="about-body" {...addReveal('d1')}>
-              I'm a front-end developer with over five years of experience delivering responsive, accessible web applications across a range of industries. I hold a strong command of HTML, CSS, and JavaScript, and bring that same rigour to TypeScript, React, and Angular.
+          <motion.div className="hero-text" initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8 }}>
+
+            <div className="hero-eyebrow">
+              Available for opportunities
+            </div>
+
+            <h1>
+              Building
+              <em>immersive</em>
+              digital experiences.
+            </h1>
+
+            <p className="hero-description">
+              Front-end developer with over 5 years of experience building premium UI systems,
+              polished interaction design, and performant applications in both React and Angular.
             </p>
-            <p className="about-body" {...addReveal('d2')}><br/>
-              I take pride in writing clean, maintainable code and in staying current with evolving standards — whether that means integrating a GraphQL API, optimising a build pipeline, or crafting an accessible data visualisation with D3.
-            </p>
+
+            <div className="hero-actions">
+              <a href="#portfolio" className="primary-btn">
+                Explore Projects
+              </a>
+
+              <a href="mailto:john.o.detsikas@gmail.com" className="secondary-btn">
+                Contact Me
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div className="hero-visual" animate={{ y: [0, -12, 0] }} transition={{ repeat: Infinity, duration: 5 }} >
+            <div className="floating-card card-1">React</div>
+            <div className="floating-card card-2">TypeScript</div>
+            <div className="floating-card card-3">Motion UI</div>
+            <div className="floating-card card-4">Angular</div>
+            <div className="floating-card card-5">HTML5</div>
+            <div className="floating-card card-6">CSS</div>
+            <div className="hero-orb" />
+          </motion.div>
+
+        </section>
+
+        <section id="about">
+          <div className="section-heading">
+            <h2>Selected Expertise</h2>
+            <p>Building modern, responsive, user-centered web experiences.</p>
           </div>
-          <div className="skills-grid" {...addReveal('d1')}>
-            {skillGroups.map((group, i) => (
-              <div className="skill-group" key={i}>
-                <p className="skill-group-label">{group.label}</p>
-                <div className="skill-chips">
-                  {group.chips.map((chip, j) => (
-                    <span className="chip" key={j}>{chip}</span>
+
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <div className="skill-card" key={group.label}>
+                <h3>{group.label}</h3>
+
+                <div className="chips">
+                  {group.chips.map((chip) => (
+                    <span className="chip" key={chip}>
+                      {chip}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* ── Portfolio ── */}
-        <div id="portfolio" className="col">
-          <div className="portfolio-header" {...addReveal()}>
-            <div>
-              <p className="section-label">Selected work</p>
-              <h2>Projects</h2>
-            </div>
+        <section id="portfolio">
+          <div className="section-heading">
+            <h2>Featured Projects</h2>
+            <p>A selection of interactive products, platforms, and digital experiences.</p>
           </div>
 
-          <div id="portfolio-list" className="col" {...addReveal('d1')}>
+          <div className="project-list">
             {Projects.map((proj, index) => (
-              <div
-                className="item col"
-                key={index}
-                onClick={() => openInNewTab(proj.url)}
-              >
-                <div className="proj-header">
-                  <div className="proj-title-wrap">
-                    <span className="proj-num">0{index + 1}</span>
-                    <h3 className="proj-title">{proj.title}</h3>
-                  </div>
-                  <span className="proj-arrow">↗</span>
-                </div>
-                <div className="proj-body">
+              <div key={index} className="project-card" onClick={() => openInNewTab(proj.url)}>
+
+                <div className="project-image-wrap">
                   <img src={proj.img} alt={proj.title} />
-                  <div className="proj-text col">
-                    <p className="proj-desc">{proj.description}</p>
-                    <div className="proj-stack row">
-                      {proj.stack.map((tech, idx) => (
-                        <span className="chip" key={idx}>{tech}</span>
+                </div>
+
+                <div className="project-content">
+
+                  <div className="project-text">
+                    <h3>{proj.title}</h3>
+                    <p>{proj.description}</p>
+                  </div>
+
+                  <div className="project-tags">
+                    <div className="project-stack">
+                      {proj.stack.map((tech, i) => (
+                        <span className="tech-pill" key={i}>
+                          {tech}
+                        </span>
                       ))}
                     </div>
                   </div>
+
                 </div>
+
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        {/* ── Contact ── */}
-        <div id="contact">
-          <div className="col">
-            <p className="section-label">Let's talk</p>
-            <h2 {...addReveal()}>Let's build<br /><em>something great.</em></h2>
-            <p className="contact-sub" {...addReveal('d1')}>
-              I'm currently open to new opportunities — whether that's a full-time role, a contract engagement, or a collaborative project. I'd welcome the chance to connect.
-            </p>
+        <section id="contact">
+
+          <div className="section-heading">
+            <h2>Let’s Build Something Great</h2>
+            <p>Open to freelance work, collaborations, and full-time opportunities.</p>
           </div>
 
-          <div id="socials" {...addReveal('d2')}>
-            <a className="item" href="mailto:john.o.detsikas@gmail.com">
-              <div className="item-icon"><img src={images.Gmail} alt="Gmail" /></div>
-              <div className="item-content">
-                <span className="item-platform">Email</span>
-                <span className="item-label">john.o.detsikas@gmail.com</span>
-              </div>
-              <span className="item-arrow">↗</span>
-            </a>
-            <a className="item" href="https://www.linkedin.com/in/john-detsikas/" target="_blank" rel="noreferrer">
-              <div className="item-icon"><img src={images.LI} alt="LinkedIn" /></div>
-              <div className="item-content">
-                <span className="item-platform">LinkedIn</span>
-                <span className="item-label">John Detsikas</span>
-              </div>
-              <span className="item-arrow">↗</span>
-            </a>
-            <a className="item" href="https://github.com/jdetsikas" target="_blank" rel="noreferrer">
-              <div className="item-icon"><img src={images.Git} alt="GitHub" /></div>
-              <div className="item-content">
-                <span className="item-platform">GitHub</span>
-                <span className="item-label">jdetsikas</span>
-              </div>
-              <span className="item-arrow">↗</span>
+          <div className="contact-card">
+            <div>
+              <h3>Get in Touch</h3>
+            </div>
+
+            <div className="links">
+
+              <a href="mailto:john.o.detsikas@gmail.com" rel="noopener noreferrer">
+                <img src={images.Gmail} alt="Gmail" height="40" />
+              </a>
+
+              <a href="https://www.linkedin.com/in/john-o-detsikas/" target="_blank" rel="noopener noreferrer">
+                <img src={images.LI} alt="LinkedIn" height="40" />
+              </a>
+
+              <a href="https://github.com/jdetsikas" target="_blank" rel="noopener noreferrer">
+                <img src={images.Git} alt="GitHub" height="40" />
+              </a>
+
+            </div>
+
+            <a href="mailto:john.o.detsikas@gmail.com" className="primary-btn">
+              Start a Conversation
             </a>
           </div>
-        </div>
+
+        </section>
 
       </div>
     </>
